@@ -6,4 +6,5 @@ set(CMAKE_C_STANDARD 11)
 add_executable(biblioteca_em_c
         main.c
         livro.c
-        database.c)
+        database.c
+        usuario.h)
