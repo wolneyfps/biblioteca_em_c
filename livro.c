@@ -18,6 +18,7 @@ void adicionarLivro(void){
 // 2. Cria uma struct temporária para guardar os novos dados
 Livro novoLivro;
 
+
 printf("\n--- Cadastro de Novo Livro ---\n");
 
 // 3. Pede e lê cada informação do usuário

@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include "livro.h"
+#include "database.h"
 
 int main(void) {
+    carregarDados(); // <-- ADICIONAR: Carrega os dados na inicialização
     int opcao;
 
     do {
@@ -21,6 +23,7 @@ int main(void) {
                 break;
             case 0:
                 printf("Saindo...\n");
+                salvarDados();
                 break;
             default:
                 printf("Opcao invalida!\n");

@@ -1,7 +1,3 @@
-//
-// Created by gwoln on 06/10/2025.
-//
-
 #ifndef BIBLIOTECA_EM_C_LIVRO_H
 #define BIBLIOTECA_EM_C_LIVRO_H
 
