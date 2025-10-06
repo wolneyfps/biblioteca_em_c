@@ -7,6 +7,7 @@ int main(void) {
     do {
         printf("\n--- Biblioteca ---\n");
         printf("1. Adicionar Livro\n");
+        printf("2. Listar Livros\n");
         printf("0. Sair\n");
         printf("Escolha uma opcao: ");
         scanf("%d", &opcao);
@@ -14,6 +15,9 @@ int main(void) {
         switch (opcao) {
             case 1:
                 adicionarLivro();
+                break;
+            case 2:
+                listarLivros();
                 break;
             case 0:
                 printf("Saindo...\n");
