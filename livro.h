@@ -11,4 +11,5 @@ typedef struct {
     int anoPublicacao;
     int quantidade;
 } Livro;
+void adicionarLivro(void);
 #endif //BIBLIOTECA_EM_C_LIVRO_H
