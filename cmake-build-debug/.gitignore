@@ -1,0 +1,7 @@
+# Arquivos de compilação e da IDE
+cmake-build-debug/
+cmake-build-release/
+.idea/
+
+# Arquivos executáveis gerados
+*.exe
