@@ -51,7 +51,6 @@ void realizarEmprestimo(void) {
         return;
     }
 
-    // (Poderíamos adicionar uma validação para ver se o livro já está emprestado, mas faremos isso depois)
 
     // --- 3. Executar a Ação ---
 
