@@ -11,4 +11,7 @@ typedef struct {
 void realizaremprestimo(void);
 
 void devolverlivro(void);
+
+void listaremprestimos(void);
+
 #endif //BIBLIOTECA_EM_C_EMPRESTIMO_H

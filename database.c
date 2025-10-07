@@ -47,3 +47,4 @@ void carregarDados(void) {
     fclose(arquivo);
     printf("-> %d livros e %d usuarios carregados com sucesso!\n", totalDeLivros, totalDeUsuarios);
 }
+

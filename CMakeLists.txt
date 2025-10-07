@@ -8,4 +8,5 @@ add_executable(biblioteca_em_c
         livro.c
         database.c
         usuario.c
-        emprestimo.h)
+        emprestimo.h
+        emprestimo.c)
