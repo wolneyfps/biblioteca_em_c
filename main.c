@@ -2,6 +2,7 @@
 #include "livro.h"
 #include "usuario.h"
 #include "database.h"
+#include "emprestimo.h"
 
 int main(void) {
     carregarDados(); // Carrega os dados na inicialização
@@ -13,6 +14,7 @@ int main(void) {
         printf("2. Listar Livros\n");
         printf("3. Adicionar Usuario\n");
         printf("4. Listar Usuario\n");
+        printf("5. Emprestimo\n");
         printf("0. Sair\n");
         printf("Escolha uma opcao: ");
         scanf("%d", &opcao);
@@ -29,6 +31,9 @@ int main(void) {
                 break;
             case 4:
                 listarUsuarios();
+                break;
+            case 5:
+                realizarEmprestimo();
                 break;
             case 0:
                 printf("Saindo...\n");

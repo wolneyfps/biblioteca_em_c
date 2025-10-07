@@ -8,7 +8,7 @@
 //  variáveis de ambos os módulos existem externamente
 extern Livro acervoDeLivros[];
 extern int totalDeLivros;
-extern usuario ficharioDeUsuarios[];
+extern Usuario ficharioDeUsuarios[];
 extern int totalDeUsuarios;
 
 void salvarDados(void) {
@@ -24,7 +24,7 @@ void salvarDados(void) {
 
     // Salva os dados dos USUÁRIOS
     fwrite(&totalDeUsuarios, sizeof(int), 1, arquivo);
-    fwrite(ficharioDeUsuarios, sizeof(usuario), totalDeUsuarios, arquivo);
+    fwrite(ficharioDeUsuarios, sizeof(Usuario), totalDeUsuarios, arquivo);
 
     fclose(arquivo);
     printf("Dados de livros e usuarios salvos com sucesso!\n");
@@ -43,7 +43,7 @@ void carregarDados(void) {
 
     // Carrega os dados dos USUÁRIOS
     fread(&totalDeUsuarios, sizeof(int), 1, arquivo);
-    fread(ficharioDeUsuarios, sizeof(usuario), totalDeUsuarios, arquivo);
+    fread(ficharioDeUsuarios, sizeof(Usuario), totalDeUsuarios, arquivo);
 
     fclose(arquivo);
     printf("-> %d livros e %d usuarios carregados com sucesso!\n", totalDeLivros, totalDeUsuarios);

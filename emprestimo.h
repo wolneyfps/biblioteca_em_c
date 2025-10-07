@@ -12,6 +12,7 @@ void realizaremprestimo(void);
 
 void devolverlivro(void);
 
-void listaremprestimos(void);
+void listaremprestimo(void);
 
+void realizarEmprestimo(void);
 #endif //BIBLIOTECA_EM_C_EMPRESTIMO_H
