@@ -1,50 +1,49 @@
+
 #include <stdio.h>
 #include "database.h"
 #include "livro.h"
+#include "usuario.h" // <-- PRECISAMOS INCLUIR O USUARIO.H
 
+// Informamos que as variáveis de ambos os módulos existem externamente
 extern Livro acervoDeLivros[];
 extern int totalDeLivros;
+extern usuario ficharioDeUsuarios[]; // usando 'usuario' como você preferiu
+extern int totalDeUsuarios;
 
 void salvarDados(void) {
-    FILE *arquivo; // Declara um ponteiro de arquivo
-
-    // Abre o arquivo "biblioteca.dat" em modo "write binary" (escrita binária)
-    arquivo = fopen("biblioteca.dat", "wb");
-
+    FILE *arquivo = fopen("biblioteca.dat", "wb");
     if (arquivo == NULL) {
         printf("Erro ao abrir o arquivo para salvamento!\n");
         return;
     }
 
-    // 1º - Salva o NÚMERO de livros. Crucial para saber quantos ler depois.
+    // Salva os dados dos LIVROS
     fwrite(&totalDeLivros, sizeof(int), 1, arquivo);
-
-    // 2º - Salva o CONTEÚDO do acervo (o array inteiro)
     fwrite(acervoDeLivros, sizeof(Livro), totalDeLivros, arquivo);
 
-    // Fecha o arquivo para garantir que tudo foi escrito no disco
+    // Salva os dados dos USUÁRIOS
+    fwrite(&totalDeUsuarios, sizeof(int), 1, arquivo);
+    fwrite(ficharioDeUsuarios, sizeof(usuario), totalDeUsuarios, arquivo); // note o sizeof(usuario)
+
     fclose(arquivo);
-    printf("Dados salvos com sucesso!\n");
+    printf("Dados de livros e usuarios salvos com sucesso!\n");
 }
 
 void carregarDados(void) {
-    FILE *arquivo;
-
-    // Abre o arquivo em modo "read binary" (leitura binária)
-    arquivo = fopen("biblioteca.dat", "rb");
-
-    // Se o arquivo não existe (primeira vez rodando), não faz nada.
+    FILE *arquivo = fopen("biblioteca.dat", "rb");
     if (arquivo == NULL) {
         printf("Arquivo de dados nao encontrado. Iniciando com acervo vazio.\n");
         return;
     }
 
-    // 1º - Lê o NÚMERO de livros do arquivo
+    // Carrega os dados dos LIVROS
     fread(&totalDeLivros, sizeof(int), 1, arquivo);
-
-    // 2º - Lê o CONTEÚDO do acervo do arquivo
     fread(acervoDeLivros, sizeof(Livro), totalDeLivros, arquivo);
 
+    // Carrega os dados dos USUÁRIOS
+    fread(&totalDeUsuarios, sizeof(int), 1, arquivo);
+    fread(ficharioDeUsuarios, sizeof(usuario), totalDeUsuarios, arquivo);
+
     fclose(arquivo);
-    printf("-> %d livros carregados com sucesso!\n", totalDeLivros);
+    printf("-> %d livros e %d usuarios carregados com sucesso!\n", totalDeLivros, totalDeUsuarios);
 }

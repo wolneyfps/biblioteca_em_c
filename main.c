@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "livro.h"
+#include "usuario.h"
 #include "database.h"
 
 int main(void) {
@@ -10,6 +11,8 @@ int main(void) {
         printf("\n--- Biblioteca ---\n");
         printf("1. Adicionar Livro\n");
         printf("2. Listar Livros\n");
+        printf("3. Adicionar Usuario\n");
+        printf("4. Listar Usuario\n");
         printf("0. Sair\n");
         printf("Escolha uma opcao: ");
         scanf("%d", &opcao);
@@ -20,6 +23,12 @@ int main(void) {
                 break;
             case 2:
                 listarLivros();
+                break;
+            case 3:
+                adicionarusuario();
+                break;
+            case 4:
+                listarusuarios();
                 break;
             case 0:
                 printf("Saindo...\n");

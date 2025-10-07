@@ -8,6 +8,5 @@ typedef struct {
 } usuario;
 
 void adicionarusuario(void);
-
 void listarusuarios(void);
 #endif //BIBLIOTECA_EM_C_USUARIO_H
