@@ -5,8 +5,9 @@ typedef struct {
     int id;
     char nome[20];
     char email[50];
-} usuario;
+} Usuario;
 
-void adicionarusuario(void);
-void listarusuarios(void);
+void adicionarUsuario(void);
+void listarUsuarios(void);
+Usuario* buscarUsuarioPorId(int id);
 #endif //BIBLIOTECA_EM_C_USUARIO_H

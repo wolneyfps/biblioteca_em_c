@@ -12,4 +12,6 @@ typedef struct {
 void adicionarLivro(void);
 
 void listarLivros(void);
+
+Livro* buscarLivroPorId(int id);
 #endif //BIBLIOTECA_EM_C_LIVRO_H

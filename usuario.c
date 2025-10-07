@@ -3,16 +3,16 @@
 
 #define MAX_USUARIOS 100
 
-usuario ficharioDeUsuarios[MAX_USUARIOS];
+Usuario ficharioDeUsuarios[MAX_USUARIOS];
 int totalDeUsuarios = 0;
 
 
-void adicionarusuario(void) {
+void adicionarUsuario(void) {
     if (totalDeUsuarios >= MAX_USUARIOS) {
         printf("Erro: Numero maximo de usuarios atingido\n");
         return;
     }
-    usuario novoUsuario;
+    Usuario novoUsuario;
 
     printf("\n--- Cadastro de Novo Livro ---\n");
 
@@ -29,7 +29,7 @@ void adicionarusuario(void) {
     totalDeUsuarios++;
 }
 
-void listarusuarios(void) {
+void listarUsuarios(void) {
     printf("\n--- Lista De Usuarios ---\n");
 
     if (totalDeUsuarios == 0) {
@@ -42,4 +42,16 @@ void listarusuarios(void) {
                    ficharioDeUsuarios[i].email);
         }
     }
+}
+Usuario* buscarUsuarioPorId(int id){
+
+    for (int i = 0; i < totalDeUsuarios; i++) {
+
+        if (ficharioDeUsuarios[i].id == id) {
+
+            return &ficharioDeUsuarios[i];
+        }
+    }
+
+    return NULL;
 }

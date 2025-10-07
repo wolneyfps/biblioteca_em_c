@@ -2,12 +2,13 @@
 #include <stdio.h>
 #include "database.h"
 #include "livro.h"
-#include "usuario.h" // <-- PRECISAMOS INCLUIR O USUARIO.H
+#include "usuario.h"
 
-// Informamos que as variáveis de ambos os módulos existem externamente
+
+//  variáveis de ambos os módulos existem externamente
 extern Livro acervoDeLivros[];
 extern int totalDeLivros;
-extern usuario ficharioDeUsuarios[]; // usando 'usuario' como você preferiu
+extern usuario ficharioDeUsuarios[];
 extern int totalDeUsuarios;
 
 void salvarDados(void) {
@@ -23,7 +24,7 @@ void salvarDados(void) {
 
     // Salva os dados dos USUÁRIOS
     fwrite(&totalDeUsuarios, sizeof(int), 1, arquivo);
-    fwrite(ficharioDeUsuarios, sizeof(usuario), totalDeUsuarios, arquivo); // note o sizeof(usuario)
+    fwrite(ficharioDeUsuarios, sizeof(usuario), totalDeUsuarios, arquivo);
 
     fclose(arquivo);
     printf("Dados de livros e usuarios salvos com sucesso!\n");

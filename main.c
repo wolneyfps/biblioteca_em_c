@@ -4,7 +4,7 @@
 #include "database.h"
 
 int main(void) {
-    carregarDados(); // <-- ADICIONAR: Carrega os dados na inicialização
+    carregarDados(); // Carrega os dados na inicialização
     int opcao;
 
     do {
@@ -25,10 +25,10 @@ int main(void) {
                 listarLivros();
                 break;
             case 3:
-                adicionarusuario();
+                adicionarUsuario();
                 break;
             case 4:
-                listarusuarios();
+                listarUsuarios();
                 break;
             case 0:
                 printf("Saindo...\n");
